@@ -1,0 +1,110 @@
+<!--
+<section class="mx-auto w-full max-w-screen-lg px-4">
+    <form class="space-y-6" [formGroup]="form" (ngSubmit)="submit()">
+        <div>
+          <label for="title" class="block text-sm/6 font-medium text-gray-900">Nombre de Usuario</label>
+          <div class="mt-2">
+            <input type="title" name="title" id="text" autocomplete="" required class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-600 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6" formControlName="title">
+          -->
+            <!--@if (isRequired('email')) {
+              <small class="text-red-400">Este campo es requerido</small>
+            } @if (hasEmailError()){
+              <small class="text-red-400">El correo debe ser valido</small>
+            }-->
+              <!--
+          </div>
+        </div>
+  
+        <div>
+          
+            <label class="inlineer cursor-r-only peer">pointer">
+                <input formControlNam-flex items-cente="completed" type="checkbox" value="" class="s
+                <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+                <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Pagó</span>
+            </label>
+  
+        </div>
+  
+        <div>
+          <button type="submit" class="flex justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Crear</button>
+        </div>
+      </form>
+</section>
+-->
+<section class="mx-auto w-full max-w-screen-lg px-4">
+  <form class="space-y-6" [formGroup]="form" (ngSubmit)="submit()">
+      
+      <!-- Campo Nombre Completo -->
+      <div>
+          <label for="fullName" class="block text-sm font-medium text-gray-900">Nombre Completo</label>
+          <input type="text" id="fullName" formControlName="fullName" autocomplete="off" required 
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
+          <small class="text-red-400" *ngIf="form.controls['fullName'].invalid && form.controls['fullName'].touched">
+              Este campo es obligatorio
+          </small>
+      </div>
+
+      <!-- Campo ID -->
+      <div>
+          <label for="idNumber" class="block text-sm font-medium text-gray-900">ID</label>
+          <input type="text" id="idNumber" formControlName="idNumber" autocomplete="off" required 
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
+          <small class="text-red-400" *ngIf="form.controls['idNumber'].invalid && form.controls['idNumber'].touched">
+            El ID debe tener entre 5 y 10 dígitos
+          </small>
+      </div>
+
+      <!-- Campo Contacto -->
+      <div>
+          <label for="contact" class="block text-sm font-medium text-gray-900">Contacto</label>
+          <input type="tel" id="contact" formControlName="contact" autocomplete="off" required 
+              class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 border border-gray-300 placeholder:text-gray-500 focus:border-indigo-500 focus:ring-indigo-500">
+          <small class="text-red-400" *ngIf="form.controls['contact'].invalid && form.controls['contact'].touched">
+            Ingrese un número de 10 dígitos
+          </small>
+      </div>
+      <!-- Profesor Asignado -->
+      <div>
+        <label for="professor" class="block text-sm font-medium text-gray-900">Profesor Asignado</label>
+        <input type="text" id="professor" formControlName="professor" required
+            class="block w-full rounded-md border border-gray-300 px-3 py-1.5 text-base text-gray-900">
+    </div>
+
+    <!-- Horario de Clases -->
+    <div>
+        <label for="schedule" class="block text-sm font-medium text-gray-900">Horario de Clases</label>
+        <input type="text" id="schedule" formControlName="schedule" required
+            class="block w-full rounded-md border border-gray-300 px-3 py-1.5 text-base text-gray-900">
+    </div>
+
+    <!-- Fecha de Pago -->
+    <div>
+        <label for="paymentDate" class="block text-sm font-medium text-gray-900">Fecha de Pago</label>
+        <input type="date" id="paymentDate" formControlName="paymentDate" required
+            class="block w-full rounded-md border border-gray-300 px-3 py-1.5 text-base text-gray-900">
+    </div>
+
+      <!-- Estado de Pago -->
+      <div>
+          <label class="inline-flex items-center cursor-pointer">
+              <input formControlName="paid" type="checkbox" class="sr-only peer">
+              <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600 dark:peer-checked:bg-blue-600"></div>
+              <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Pagó</span>
+          </label>
+      </div>
+
+      <!-- Campo Foto de Perfil -->
+      
+
+      <!-- Botón de Crear -->
+      <div>
+          <button type="submit" 
+              class="w-full rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500">
+              Crear Usuario
+          </button>
+      </div>
+  </form>
+</section>
+
+
+
